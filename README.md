@@ -190,50 +190,6 @@ verilog/
 
 扁平布局（如 `verilog/adder.v`）同样支持，脚本中写明确路径即可。
 
-## 推送到 GitHub
-
-### 首次初始化（独立 Skill 仓库）
-
-若要将本目录作为独立仓库发布：
-
-```powershell
-# 在仓库根目录或 skills/ 上级目录操作
-cd D:\code\pico_copy
-
-git init
-git add skills/README.md skills/assets/ skills/icarus-verilog/ verilog/adder.v verilog/adder_tb.v .gitignore
-git commit -m "docs: add Icarus Verilog HDL skills with waveform guide"
-
-# 在 GitHub 网页 Create repository（不要勾选 Initialize with README）
-git branch -M main
-git remote add origin https://github.com/YOUR_USER/icarus-verilog-skills.git
-git push -u origin main
-```
-
-推送后访问 `https://github.com/YOUR_USER/icarus-verilog-skills`，README 与波形图会显示在仓库首页。
-
-### 已有远程仓库
-
-```powershell
-git add skills/README.md skills/assets/sim-waveform.jpg skills/icarus-verilog/
-git commit -m "docs: update skills README with visualization guide"
-git push origin main
-```
-
-### GitHub Pages（可选）
-
-1. 仓库 **Settings → Pages**
-2. **Source**：Deploy from branch → `main` → `/docs` 或 `/root`
-3. 若用 `/docs`：将 README 复制为 `docs/index.md`，图片放 `docs/assets/sim-waveform.jpg`
-
-站点地址：`https://YOUR_USER.github.io/REPO_NAME/`
-
-### 推送前检查
-
-- 图片使用 `assets/sim-waveform.jpg`（避免中文文件名）
-- 不要提交 `*.vvp`、`*.vcd` 等仿真产物
-- 发布时只保留 `icarus-verilog/`（勿包含旧版 `icverilog/` 副本）
-
 ## 更多文档
 
 | 文件 | 内容 |
